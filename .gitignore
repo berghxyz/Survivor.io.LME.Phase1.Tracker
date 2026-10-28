@@ -1,0 +1,19 @@
+# Runtime data: SQLite database + uploaded screenshots
+data/
+uploads/
+
+# Node
+node_modules/
+npm-debug.log*
+*.log
+
+# Local environment
+.env
+.env.*
+
+# Windows download artifacts
+*:Zone.Identifier
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db

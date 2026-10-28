@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register LME Phase 1 · birds</title>
+<link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">birds <small>LME Phase 1</small></div>
+  <nav>
+    <a href="/">Weeks</a>
+    <a href="/register.html" class="active">Register scores</a>
+    <a href="/roster.html">Roster</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Register LME Phase 1 scores</h1>
+  <p class="sub">
+    Drop the <b>Member Result</b> screenshots from Clan Expedition Phases. Everything you
+    upload this week counts as the same LME Phase 1 result, and a higher score later in the
+    week replaces the lower one automatically.
+  </p>
+
+  <div class="card">
+    <div class="row">
+      <label for="week">Week</label>
+      <select id="week"></select>
+      <span class="muted" id="weekHint"></span>
+    </div>
+    <div class="drop" id="drop" style="margin-top:.9rem">
+      <b>Drop screenshots here</b> or
+      <label class="button" for="files" style="cursor:pointer">choose files</label>
+      <input id="files" type="file" accept="image/png,image/jpeg" multiple hidden>
+      <div class="muted" style="margin-top:.4rem;font-size:.85rem">
+        Screenshots of the whole member list, scrolled down one screen at a time. Overlap is fine.
+      </div>
+    </div>
+    <div class="row" style="margin-top:.9rem">
+      <div class="progress grow"><i id="bar"></i></div>
+      <span class="muted" id="status" style="min-width:14rem">Idle.</span>
+      <button id="stop" disabled>Stop</button>
+    </div>
+  </div>
+
+  <div class="card" id="reviewCard" hidden>
+    <div class="row spread">
+      <h2 style="margin:0">Check before saving</h2>
+      <div class="row">
+        <button id="addRow">Add member</button>
+        <button id="clearAll" class="danger">Clear list</button>
+      </div>
+    </div>
+    <p class="sub">
+      Rows with a <span class="tag warn">check</span> tag had a low-confidence read or a name that
+      could not be matched — please look at the crop on the left. Scores are compared with what is
+      already stored for this week.
+    </p>
+    <div id="reviewTable"></div>
+    <div class="row" style="margin-top:1rem">
+      <button class="primary" id="save">Save to this week</button>
+      <span class="muted" id="saveHint"></span>
+    </div>
+  </div>
+
+  <div class="card" id="resultCard" hidden>
+    <h2 style="margin-top:0">Saved</h2>
+    <div id="result"></div>
+    <p class="row" style="margin-bottom:0">
+      <a class="button primary" id="openWeek" href="#">Open week stats</a>
+    </p>
+  </div>
+</main>
+
+<div id="toast"></div>
+<script type="module" src="/js/register.js"></script>
+</body>
+</html>

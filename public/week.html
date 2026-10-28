@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week stats · birds</title>
+<link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">birds <small>LME Phase 1</small></div>
+  <nav>
+    <a href="/">Weeks</a>
+    <a href="/register.html">Register scores</a>
+    <a href="/roster.html">Roster</a>
+  </nav>
+  <div class="row grow" style="justify-content:flex-end">
+    <button id="prevWeek" title="Previous week">‹</button>
+    <select id="weekPicker" title="Pick a week"></select>
+    <button id="nextWeek" title="Next week">›</button>
+  </div>
+</header>
+
+<main>
+  <h1 id="title">Week</h1>
+  <p class="sub" id="subtitle"></p>
+
+  <div class="row" style="margin-bottom:1rem">
+    <div class="stats card grow" id="totals"></div>
+  </div>
+
+  <div class="card">
+    <div class="row spread" style="margin-bottom:.6rem">
+      <input id="filter" type="search" placeholder="Filter members…" class="name">
+      <div class="row">
+        <a class="button" id="csv" href="#">Export CSV</a>
+        <button id="rollGlory" title="Set Glory members to the top scores of this week">Roll glory from this week</button>
+        <button id="deleteWeek" class="danger" title="Remove every score registered for this week">Delete week</button>
+      </div>
+    </div>
+    <div id="tableHost"><div class="empty">Loading…</div></div>
+    <p class="sub" style="margin-bottom:0">
+      Gain compares against the previous week that has data. A member with no score
+      last week starts at <b>0</b> gain and no percentage. Click a column header to sort.
+    </p>
+  </div>
+
+  <div class="card" id="proofCard" hidden>
+    <h2 style="margin-top:0">Screenshots behind this week</h2>
+    <div class="row" id="proof"></div>
+  </div>
+</main>
+
+<div id="toast"></div>
+<script type="module" src="/js/week.js"></script>
+</body>
+</html>
